@@ -34,10 +34,10 @@ x1_min=X[:,0].min()-1
 x1_max=X[:,0].max()+1
 x2_min=X[:,1].min()-1
 x2_max=X[:,1].max()+1
-x1_,x2_=np.meshgrid(np.arange(x1_min,x1_max,0.02),np.arange(x2_min,x2_max,0.02))
+# x1_,x2_=np.meshgrid(np.arange(x1_min,x1_max,0.02),np.arange(x2_min,x2_max,0.02))
 
-y_=clf.predict(np.c_[x1_.ravel(),x2_.ravel()])
+y_=clf.predict(np.c_[x2_.ravel(),x2_.ravel()])
 y_=y_.reshape(x1_.shape)
-plt.contourf(x1_,x2_,y_,cmap=plt.cm.Paired)
+plt.contourf(x2_,x2_,y_,cmap=plt.cm.Paired)
 plt.scatter(X[:,0],X[:,1],c=y)
 plt.show()
